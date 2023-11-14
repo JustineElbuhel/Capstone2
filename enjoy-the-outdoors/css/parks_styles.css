@@ -1,0 +1,14 @@
+.navbar {
+    background-color: black;
+}
+
+h5 {
+    text-align: center;
+    text-decoration: underline 2px;
+    text-decoration-color: lightsalmon;
+    text-underline-offset: 0.3rem;
+    line-height: 2rem;
+}
+
+btn-custom {
+    }
