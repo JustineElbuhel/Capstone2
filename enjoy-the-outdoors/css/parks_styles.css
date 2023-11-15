@@ -1,14 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Rowdies&display=swap');
+.card {
+    font-family: "Crimson Text";
+}
+
+.navbar{
+    background-color: rgba(10, 12, 9, 0.5);
+    backdrop-filter: blur(5px);
+}
 .navbar {
+    transition: all 0.5s;
+}
+
+.navbar-scrolled{
     background-color: black;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url("https://cdn.outsideonline.com/wp-content/uploads/2022/09/yosemite-h.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+main {
+    margin-top: 4%;
 }
 
 h5 {
+    font-weight: bold;
+    font-size: x-large;
     text-align: center;
     text-decoration: underline 2px;
-    text-decoration-color: lightsalmon;
+    text-decoration-color: #ffb235;
     text-underline-offset: 0.3rem;
     line-height: 2rem;
 }
 
-btn-custom {
-    }
+footer {
+    background-color: black;
+    bottom: 0;
+}
+
+.card {
+    box-shadow: 0 10px 10px rgba(0,0,0, 0.5);
+}
+
+.card-custom {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
