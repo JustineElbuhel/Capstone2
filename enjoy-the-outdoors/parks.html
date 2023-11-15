@@ -44,8 +44,11 @@
     </header>
     <!-- Main content -->
     <main>
-        <div class="d-flex justify-content-between">
-            <div class="col-3 position-fixed">
+        <div class="d-flex flex-column flex-md-row">
+
+            <!-- Sidebar - Fixed Position -->
+            <div id="fixedDiv" class="col-12 col-md-3">
+                <!-- Sidebar content -->
                 <div class="container">
                     <div class="d-flex justify-content-center mx-auto">
                         <div class="card w-75 mt-5">
@@ -67,7 +70,7 @@
                                 </div>
                                 <div class="d-flex justify-content-center">
                                     <div id="dropdownDiv">
-                                        <!-- ! DROPDOWNS ON USER SELECTION DISPLAY HERE -->
+                                        <!-- ! DROPDOWNS DISPLAY HERE -->
                                     </div>
                                 </div>
                             </div>
@@ -77,9 +80,9 @@
             </div>
 
             <!-- Display national parks div -->
-            <div class="col-8 offset-3 flex-row align-content-end my-5">
+            <div id="displayDiv" class="col-12 col-md-9 ml-md-auto my-5">
                 <div id="displayParks" class="d-flex flex-wrap justify-content-evenly">
-                    <!--! PARKS WILL DISPLAY HERE -->
+                    <!-- Main content -->
                 </div>
             </div>
         </div>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Rowdies&display=swap');
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -6,6 +9,8 @@ html {
     background-color: rgba(10, 12, 9, 0.5);
     backdrop-filter: blur(5px);
 }
+
+
 .navbar {
     transition: all 0.5s;
 }
@@ -16,10 +21,73 @@ html {
 }
 
 body {
-    background-color: #e7cdab;
+    background-color: #7e8b81;
+}
+
+main {
+    margin-top: 7%;
+}
+
+img {
+    height: 40vh;
+    border-radius: 8px;
+}
+
+.card {
+    font-family: "Crimson Text";
+    cursor: pointer;
+    height: 40vh;
+    width: 23vw;
+    border-radius: 9px;
+    box-shadow: 0 10px 10px rgba(0,0,0, 0.5);
+    overflow: hidden;
+}
+
+.card-info {
+    top: 85%;
+    height: 40vh;
+    width: 23vw;
+    padding: 5px 10px 10px 10px;
+    box-sizing: border-box;
+    position: absolute;
+    background: rgba(27, 27, 27, 0.4);
+    color: white;
+    transition: 0.8s;
+    overflow-y: auto;
+}
+
+.card-info::-webkit-scrollbar-track {
+    background-color: lightgrey;
+    border-radius: 100vh;
+}
+
+.card-info::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .76);
+    border-radius: 100vh;
+}
+
+h4 {
+    color: white;
+}
+
+.mountain-text {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.card:hover .card-info{
+    cursor: pointer;
+    top: 0;
+}
+
+.card:hover .mountain-text{
+    opacity: 1;
+    visibility: visible;
 }
 
 footer {
     bottom: 0;
-    position:absolute;
+}
+#YP-logo {
+    height: 65px;
 }

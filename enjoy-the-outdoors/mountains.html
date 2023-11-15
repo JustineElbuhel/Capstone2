@@ -12,10 +12,10 @@
 <body>
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark position-sticky">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark position-fixed">
             <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img id="YP-logo" src="images/icons/yp-logo.png" alt="Your Path Logo" draggable="false" height="65"/> 
+                <img id="YP-logo" src="images/icons/yp-logo.png" alt="Your Path Logo" draggable="false"/> 
             </a>
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
@@ -44,20 +44,37 @@
     </header>
     <main>
         <!-- Main content -->
-        <div class="container">
-            <h1>Mountains</h1>
-            <h3>Search by mountain:</h3>
-            <form id="mountainSearchForm">
-                <select id="searchByMountainDropdown"></select>
-                <button type="submit" id="searchByMountainBtn">Search</button>
-            </form>
+        <div>
+            <!-- <div class="m-4 d-flex justify-content-center">
+                <h1>Mountains</h1>
+            </div> -->
+            <div class="container ms-5 position-fixed">
+                <div class="card h-auto" style="width: 18rem;">
+                    <div class="card-body">
+                        <h3>Search by mountain:</h3>
+                        <select id="searchByMountainDropdown" class="form-select form-select mb-3">
+                            <option>Select mountain</option>
+                        </select>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" id="searchByMountainBtn" data-bs-toggle="modal" data-bs-target="#reg-modal">Search</button>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            
+            <!-- Modal popup on user selection -->
+            <div id="myModal"></div>
+
+            <!-- Display all mountains -->
+            <div class=" col-9 offset-3 flex-row align-content-end ">
+                <div id="displayMountainCards" class="d-flex justify-content-evenly flex-row flex-wrap">
+                    <!-- ! Mountain information displays here -->
+                </div>
         </div>
-        <div id="displayMountainsInfo">
-            <!-- ! Mountain information displays here -->
         </div>
     </main>
     <!-- Footer -->
-    <footer class="p-3 mt-5 fixed-bottom" >
+    <footer class="p-3 mt-5" >
         <div class="container">
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                 <p>© 2023 Company, Inc. All rights reserved.</p>

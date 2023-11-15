@@ -2,7 +2,6 @@
 
 window.onload = init;
 
-
 //Navbar on scroll transition
 const navbar = document.querySelector(".navbar");
 window.addEventListener("scroll", () => {
@@ -17,7 +16,6 @@ window.addEventListener("scroll", () => {
 
 //Initialize radio buttons to display dropdowns
 function init(){
-
     //*Location radio
     const locationRadio = document.getElementById("locationRadio");
     locationRadio.onclick = displayDropdown;
@@ -39,7 +37,9 @@ function displayDropdown(){
         //*Create a dropdown element
         document.getElementById("dropdownDiv").innerHTML = `
         <form id="locationSearchForm">
-            <select id="searchByLocationDropdown" class="form-select form-selectsm mb-3"></select>
+            <select id="searchByLocationDropdown" class="form-select form-selectsm mb-3">
+                <option>Select state</option>
+            </select>
             <div class="d-flex justify-content-end pb-2">
                 <button type="submit" id="searchByLocationBtn" class="btn btn-custom">Search</button>
             </div>
@@ -57,13 +57,14 @@ function displayDropdown(){
         locationSearchBtn.addEventListener("submit", displayParks)
     }
 
-    
     //!PARK TYPE DROPDOWN
     else if(parkTypeRadio.checked){
         //*Create dropdown element
         document.getElementById("dropdownDiv").innerHTML =`
         <form id="parkTypeSearchForm">
-            <select id="searchByParkTypeDropdown" class="form-select form-selectsm mb-3"></select>
+            <select id="searchByParkTypeDropdown" class="form-select form-selectsm mb-3">
+                <option>Select park type</option>
+            </select>
             <div class="d-flex justify-content-end pb-2">
                 <button type="submit" id="searchByParkTypeBtn" class="w-50">Search</button>
             </div>
@@ -86,8 +87,12 @@ function displayDropdown(){
         document.getElementById("dropdownDiv").innerHTML = `
         <form id="SearchForm">
             <div class="d-flex justify-content-between flex-column">
-                <select id="searchByLocationDropdown" class="form-select form-selectsm mb-3 me-3"></select>
-                <select id="searchByParkTypeDropdown" class="form-select form-selectsm mb-3"select></select>
+                <select id="searchByLocationDropdown" class="form-select form-selectsm mb-3 me-3">
+                <option>Select state</option>
+                </select>
+                <select id="searchByParkTypeDropdown" class="form-select form-selectsm mb-3"select>
+                    <option>Select park type</option>
+                </select>
                 <div class="d-flex justify-content-end pb-2">
                     <button type="submit" id="bothBtn">Search</button>
                 </div>
