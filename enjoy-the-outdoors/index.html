@@ -36,10 +36,7 @@
                                 </ul>
                             </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>About Us</a>
-                        </li>
-                        <li class="nav-item ms-3">
-                            <button type="button" class="btn btn-outline-success"><a href="donate.html">DONATE</a></button>
+                            <a class="nav-link mx-2" href="#about"><i class="fas fa-bell pe-2"></i>About Us</a>
                         </li>
                         </ul>
                     </div>
@@ -51,9 +48,10 @@
                         <div class="d-flex flex-column">
                             <h1>Discover your path:</h1>
                         </div>
+                        <!-- Hero buttons -->
                         <div class="container w-75">
                             <div class="d-flex justify-content-around mt-5">
-                                <button class="hero-button w-50 me-3" onclick="location.href='mountains.html';"><a href="mountains.html">Mountains of the US</a></button>
+                                <button class="hero-button w-50 me-3" onclick="location.href='mountains.html';">Mountains of the US</button>
                                 <button class="hero-button w-50" onclick="location.href='parks.html';">Parks of the US</button>
                             </div>
                         </div>
@@ -62,20 +60,37 @@
             </div>
         </header>
     </section>
-    <main>
-        <!-- Main content -->
-        <div class="container mt-5">
-            Just some content
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, tempore porro repudiandae quia quaerat repellat ea consequuntur aperiam! Omnis fugit dolores dolore repellendus ducimus necessitatibus similique corrupti quas ullam possimus?
-            Sunt, placeat? Ad veritatis sint amet, voluptatum omnis earum? Cupiditate harum voluptate pariatur natus commodi recusandae, cum illum numquam adipisci tenetur qui suscipit voluptatibus cumque facere beatae voluptatum autem alias.
-            Eveniet, aspernatur iure aliquid assumenda provident error porro tempora quaerat iste consectetur harum facere? Ut numquam deserunt harum doloremque error. Est animi ullam fugit repudiandae velit perferendis eum culpa dolores.
-            Provident amet ab illum. Dolores nisi consectetur totam hic, necessitatibus voluptatibus unde doloremque praesentium aspernatur maiores quasi corporis, enim eius. Asperiores assumenda eligendi omnis architecto nesciunt incidunt quasi vel consequuntur!
-            Voluptas nam similique in esse assumenda harum optio recusandae praesentium? Et eligendi laudantium eius quos consectetur ex animi temporibus quidem voluptas deleniti aliquid neque aperiam, corrupti quaerat vel aspernatur veritatis?
-            Illo nemo minus id nisi. Repellat voluptas non quis incidunt voluptatem unde corporis fugit, illum distinctio nemo ducimus recusandae quos doloribus officia, cupiditate rerum labore delectus voluptate dignissimos quidem dicta?
-            Quibusdam reiciendis quo beatae autem quae! Pariatur, ex veniam harum praesentium, consequatur soluta reprehenderit consectetur velit, voluptate corrupti necessitatibus quibusdam nulla quas quam nemo voluptatum. Labore molestias maiores vel quisquam.
-            Perferendis suscipit earum laudantium dolore harum dicta, maxime hic placeat sit, repellendus nesciunt amet esse corrupti provident consectetur labore sunt nisi! Nemo eos animi tempora? Dolores doloremque ab quisquam quasi.
-            Hic quisquam harum quia cum. Vel, nam voluptas quas reprehenderit distinctio dignissimos consectetur quaerat totam. Neque officia omnis asperiores assumenda incidunt modi dolores! Sit nam odio ab nesciunt asperiores culpa.
-            Praesentium veniam corrupti consequuntur ex sapiente inventore modi adipisci exercitationem. Ullam ipsam accusamus provident hic deleniti nostrum excepturi magni necessitatibus. Ipsam accusantium iure, voluptatum iusto necessitatibus odio. Eveniet, assumenda ipsum.
+    <main id="about">
+        <!-- About content -->
+        <div id="aboutDiv"  class="about d-flex flex-wrap" style="padding-top: 60px; margin-top: -70px;">
+            <div class="container d-flex flex-column mt-4">
+                <div class="d-flex justify-content-center">
+                    <h2><strong>YOUR PATH</strong></h2>
+                </div>
+                <p class="fs-5">
+                    Welcome to Your Path, your go-to destination for discovering the majestic beauty of mountains and parks across the nation! 
+                    At Your Path, we believe that the great outdoors are meant to be explored, and we're here to help you embark on unforgettable 
+                    adventures. Our mission is to provide a comprehensive and user-friendly platform that enables outdoor enthusiasts like you to easily 
+                    locate and explore mountains and parks throughout the country. Whether you're an avid hiker, a nature photographer, or simply someone 
+                    who appreciates the tranquility of the wilderness, Your Path is your ultimate guide to discovering the breathtaking landscapes that 
+                    Mother Nature has to offer!
+                </p>
+            </div>
+            <div class="container">
+                <div class="d-flex row">
+                    <div class="col-7 d-flex flex-column">
+                        <h3><strong>About Us</strong></h3>
+                        <ul>
+                            <li class="my-3 fs-5"><strong>Extensive Datebase: </strong>Navigate your way through an extensive and carefully curated database of mountains and parks from coast to coast.</li>
+                            <li class="my-3 fs-5"><strong>User-Friendly Interface: </strong>Your Path is designed with simplicity in mind. Our user-friendly interface allows you to effortlessly search for specific locations, explore by region, or discover new destinations tailored to your preferences.</li>
+                            <li class="my-3 fs-5"><strong>Detailed Information: </strong>Each mountain and park listing on Your Path is packed with detailed information to enhance your planning process.</li>
+                        </ul>
+                    </div>
+                    <div class="col-5 mx-auto justify-content-end">
+                        <img class="w-100" id="aboutImg" src="images/NTwin-StoryImage_2.jpg" alt="North Twin mountain">
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -83,7 +98,7 @@
     <footer class="p-3 mt-5" >
         <div class="container">
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>© 2023 Company, Inc. All rights reserved.</p>
+                <p>© 2023 Your Path, Inc. All rights reserved.</p>
             </div>
         </div>
     </footer>

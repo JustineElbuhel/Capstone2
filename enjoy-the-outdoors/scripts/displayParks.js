@@ -16,6 +16,15 @@ window.addEventListener("scroll", () => {
 
 //Initialize radio buttons to display dropdowns
 function init(){
+    //*Display all parks
+    displayAllParkCards();
+
+
+    //!Radio button
+    //* All parks radio
+    const allParksRadio = document.getElementById("allRadio");
+    allParksRadio.onclick = displayAllParkCards;
+
     //*Location radio
     const locationRadio = document.getElementById("locationRadio");
     locationRadio.onclick = displayDropdown;
@@ -29,6 +38,71 @@ function init(){
     bothRadio.onclick = displayDropdown;
 }
 
+//Display all park cards function
+function displayAllParkCards(){
+    document.getElementById("dropdownDiv").innerHTML = "";
+    let displayParkInfo = ""
+    for(let index = 0; index < nationalParksArray.length; index++){
+
+        //*Extract phone number if available
+        let phone = null;
+        if(nationalParksArray[index].Phone == 0){
+            phone = "N/A";
+        }
+        else if(nationalParksArray[index].Phone.includes("(")){
+            phone = nationalParksArray[index].Phone;
+        }
+        else {
+            phone = "N/A"
+        }
+
+        //*Extract fax numver if available
+        let fax = null;
+        if (nationalParksArray[index].Fax == 0){
+            fax = "N/A"
+        }
+        else {
+            fax = nationalParksArray[index].Fax;
+        }
+
+        //*Extract park website if available
+        let parkWebsite = null;
+        if(nationalParksArray[index].Visit){
+            parkWebsite = `<button class="d-flex justify-content-center" onclick="window.open('${nationalParksArray[index].Visit}')">Learn more</button>`;
+        }
+        else{
+            parkWebsite = "<br>";
+        }
+
+        //*declare a variable with HTML with the each park info
+        displayParkInfo +=`
+        <div class="card m-3 " style="width: 18rem;">
+            <div class="card-body d-flex flex-column justify-content-between">
+                <div>
+                    <h5 class="card-title">${nationalParksArray[index].LocationName}</h5>
+                    <div class="d-flex  flex-row justify-content-between mt-1"> 
+                        <div>
+                            <p class="card-subtitle mb-2 text-muted fs-large">${nationalParksArray[index].City}, ${nationalParksArray[index].State}</p>
+                        </div>
+                        <div>
+                            <p class="card-subtitle mb-2 text-muted fs-large"><strong>(${nationalParksArray[index].LocationID})</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="card-text"><strong>Contact</strong><br>Phone: ${phone}<br> Fax: ${fax}</p>
+                    <div class="d-flex justify-content-center">
+                        ${parkWebsite}
+                    </div>
+                </div>
+            </div>
+        </div>`;
+    }
+    document.getElementById("displayParks").innerHTML = displayParkInfo;
+}
+
+
+
 //Show || Hide dropdowns
 function displayDropdown(){
 
@@ -41,7 +115,7 @@ function displayDropdown(){
                 <option>Select state</option>
             </select>
             <div class="d-flex justify-content-end pb-2">
-                <button type="submit" id="searchByLocationBtn" class="btn btn-custom">Search</button>
+                <button type="submit" id="searchByLocationBtn">Search</button>
             </div>
         </form>`;
 
@@ -117,11 +191,6 @@ function displayDropdown(){
         //*Call displayParks function
         const bothBtn = document.getElementById("SearchForm");
         bothBtn.addEventListener("submit", displayParks);
-    }
-    
-    //!NO SELECTION ON RADIO BUTTONS
-    else{
-        document.getElementById("dropdownDiv").innerHTML = "";
     }
 }
 
@@ -199,7 +268,7 @@ function displayParks(event){
             
             //*declare a variable with HTML with the each park info
             displayParkInfo +=`
-            <div class="card my-3" style="width: 18rem;">
+            <div class="card m-3 " style="width: 18rem;">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <div>
                         <h5 class="card-title">${name}</h5>
@@ -226,15 +295,6 @@ function displayParks(event){
 
     //*No parks found display 
     else {
-        displayParkInfo = `
-        <div class="card my-3" style="width: 18rem;">
-                <div class="card-body d-flex flex-column justify-content-between">
-                    <div class="d-flex justify-content-center">
-                        <h3 class="card-title">No parks found</h3>
-                    </div>
-                </div>
-            </div>`;
-
-        document.getElementById("displayParks").innerHTML = displayParkInfo;
+        alert("No parks found, please try a new search")
     }    
 }

@@ -33,10 +33,7 @@
                         </ul>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>About Us</a>
-                </li>
-                <li class="nav-item ms-3">
-                    <button type="button" class="btn btn-outline-success"><a href="donate.html">DONATE</a></button>
+                    <a class="nav-link mx-2" href="index.html#about"><i class="fas fa-bell pe-2"></i>About Us</a>
                 </li>
                 </ul>
             </div>
@@ -47,27 +44,35 @@
         <div class="d-flex flex-column flex-md-row">
 
             <!-- Sidebar - Fixed Position -->
-            <div id="fixedDiv" class="col-12 col-md-3">
+            <div id="fixedDiv" class="col-12 col-md-3 p-2">
                 <!-- Sidebar content -->
                 <div class="container">
                     <div class="d-flex justify-content-center mx-auto">
-                        <div class="card w-75 mt-5">
+                        <div id="card-custom" class="card w-75 mt-5">
                             <div class="d-flex justify-content-center flex-column flex-wrap p-2">
                                 <div class="d-flex justify-content-center my-3">
-                                    <h4>Search by:</h4>
+                                    <h3><strong>Search parks by:</strong></h3>
                                 </div>
                                 <div class="d-flex justify-content-start flex-column mb-3">
+
                                     <!-- Radio buttons to select dropdown type -->
-                                    <div class="ms-2">
-                                        <input type="radio" name="dropdownSelect" id="locationRadio"> <strong>State</strong>
+                                    <div class="ms-2 mb-1">
+                                        <input type="radio" name="dropdownSelect" id="allRadio" checked> <strong>All Parks</strong>
+                                    </div>
+                                    <div class="d-flex flex-row mb-1">
+                                        <div class="ms-2 me-2">
+                                            <input type="radio" name="dropdownSelect" id="locationRadio"> <strong>State</strong>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="dropdownSelect" id="parkTypeRadio"> <strong>Park Type</strong>
+                                        </div>
                                     </div>
                                     <div class="ms-2">
-                                        <input type="radio" name="dropdownSelect" id="parkTypeRadio"> <strong>Park Type</strong>
-                                    </div>
-                                    <div class="ms-2">
-                                        <input type="radio" name="dropdownSelect" id="bothRadio"> <strong>Location & Park Type</strong>
+                                        <input type="radio" name="dropdownSelect" id="bothRadio"> <strong>State & Park Type</strong>
                                     </div>
                                 </div>
+
+                                <!-- Dropdown -->
                                 <div class="d-flex justify-content-center">
                                     <div id="dropdownDiv">
                                         <!-- ! DROPDOWNS DISPLAY HERE -->
@@ -80,9 +85,11 @@
             </div>
 
             <!-- Display national parks div -->
-            <div id="displayDiv" class="col-12 col-md-9 ml-md-auto my-5">
-                <div id="displayParks" class="d-flex flex-wrap justify-content-evenly">
-                    <!-- Main content -->
+            <div id="displayDiv" class="col-12 col-md-9 ml-md-auto my-5 offset-3">
+                <div class="d-flex justify-content-center">
+                    <div id="displayParks" class="d-flex flex-wrap justify-content-evenly">
+                        <!-- Main content -->
+                    </div>
                 </div>
             </div>
         </div>

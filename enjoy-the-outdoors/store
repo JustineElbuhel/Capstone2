@@ -111,3 +111,541 @@ return `
         margin-left: 0; /* Removes offset on small screens */
     }
 }
+
+
+
+
+
+
+
+
+
+        <!-- Main content -->
+        <div class="d-flex flex-column flex-md-row">
+
+            <!-- Sidebar - Fixed Position -->
+            <div id="fixedDiv" class="col-12 col-md-3 position-fixed">
+                <!-- Sidebar content -->
+                <div class="card h-auto" style="width: 18rem;">
+                    <div class="card-body">
+                        <h3>Search by mountain:</h3>
+                        <select id="searchByMountainDropdown" class="form-select form-select mb-3">
+                            <option>Select mountain</option>
+                        </select>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" id="searchByMountainBtn" data-bs-toggle="modal" data-bs-target="#reg-modal">Search</button>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        
+            <!-- Display all mountains -->
+            <div id="displayDiv" class="col-12 col-md-9 ml-md-auto my-5">
+                <div id="displayMountainCards" class="d-flex justify-content-evenly flex-row flex-wrap">
+                    <!-- ! Mountain information displays here -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+        <!-- Main content -->
+        <div>
+            <div class="container ms-5 position-fixed">
+                <div class="card h-auto" style="width: 18rem;">
+                    <div class="card-body">
+                        <h3>Search by mountain:</h3>
+                        <select id="searchByMountainDropdown" class="form-select form-select mb-3">
+                            <option>Select mountain</option>
+                        </select>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" id="searchByMountainBtn" data-bs-toggle="modal" data-bs-target="#reg-modal">Search</button>
+                        </div>
+                    </div>
+                </div>        
+            </div>
+            
+            <!-- Modal popup on user selection -->
+            <div id="myModal"></div>
+
+            <!-- Display all mountains -->
+            <div class="col-9 offset-3 flex-row align-content-end ">
+                <div id="displayMountainCards" class="d-flex justify-content-evenly flex-row flex-wrap">
+                    <!-- ! Mountain information displays here -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function MountainInfo(event){
+            event.preventDefault();
+            const mountain = document.getElementById("searchByMountainDropdown");
+            const selectedMountainValue = mountain.value;
+            console.log(selectedMountainValue);
+        
+            let matching = mountainsArray.find(mountains => mountains.name.includes(selectedMountainValue));
+        
+            if(matching){
+                document.getElementById("myModal").innerHTML = `
+                <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header d-flex flex-column justify-content-center">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="images/${matching.img}" class="w-auto">
+                                    </div>
+                                    <h3 class="modal-title" id="modal-title">${matching.name}</h3>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>${matching.desc}</strong></p>
+                                <br>
+                                <p><strong>Elevation: </strong>${matching.elevation}<br>
+                                <strong>Latitude: </strong>${matching.coords.lat}<br>
+                                <strong>Longitude: </strong>${matching.coords.lng}</p>
+                                POTENTIAL SUNRISE/SUNSET
+                            </div>
+                                <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+            else{
+                document.getElementById("myModal").innerHTML = "";
+            }
+        };
+        <button type="button" id="searchByMountainBtn" data-bs-toggle="modal" data-bs-target="#${mountainsArray[index].elevation}">More info</button>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        // let matching = mountainsArray.find(mountains => mountains.name.includes(parameter));
+                
+        // if(matching){
+        //     document.getElementById("myModal").innerHTML = `
+        //     <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        //         <div class="modal-dialog modal-dialog-centered">
+        //             <div class="modal-content">
+        //                 <div class="modal-header d-flex flex-column justify-content-center">
+        //                         <div class="d-flex justify-content-center">
+        //                             <img src="images/${matching.img}" class="w-auto">
+        //                         </div>
+        //                         <h3 class="modal-title" id="modal-title">${matching.name}</h3>
+        //                 </div>
+        //                 <div class="modal-body">
+        //                     <p><strong>${matching.desc}</strong></p>
+        //                     <br>
+        //                     <p><strong>Elevation: </strong>${matching.elevation}<br>
+        //                     <strong>Latitude: </strong>${matching.coords.lat}<br>
+        //                     <strong>Longitude: </strong>${matching.coords.lng}</p>
+        //                     POTENTIAL SUNRISE/SUNSET
+        //                 </div>
+        //                     <div class="modal-footer">
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        //     `;
+        // }
+        // else{
+        //     document.getElementById("myModal").innerHTML = "";
+        // }
+
+
+
+
+        'use strict'
+
+window.onload = init;
+
+
+
+//Navbar on scroll transition
+const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
+    if(window.scrollY >= 56) {
+        navbar.classList.remove('navbar-scrolled');
+    }
+    else if(window.scrollY < 56){
+        navbar.classList.add('navbar-scrolled');
+    }
+
+})
+
+
+
+//Call create dropdown options and initialize search button
+function init(){
+    //*Call function to display all moutain cards
+    displayMountainCards();
+
+    //*Call function to create dropdown options for mountains
+    initMountainDropdown();
+
+    //*Add event listioner to 
+    // const mountainDropdown = document.getElementById("searchByMountainDropdown");
+    // mountainDropdown.addEventListener('change', MountainInfo);
+}
+
+function newFucntion(parameter){
+    let myModal = document.getElementById("myModal");
+    let box = document.createElement("div");
+    box.id = whiteBox;
+    box.innerHTML = "Anything";
+
+    myModal.appendChild();
+
+
+
+}
+
+//Create mountain cards
+function displayMountainCards(){
+    //*Locate display div
+    const showMountainsDiv = document.getElementById("displayMountainCards");
+    
+    let cards = ""
+    for(let index = 0; index < mountainsArray.length; index++){
+        let parameter = mountainsArray[index].name;
+        cards += `
+        <div class="card my-3" id="${mountainsArray[index].name}" >
+        <img src="images/${mountainsArray[index].img}" >
+            <div class="card-info card-body">
+                <h4>${mountainsArray[index].name}</h4>
+                <div>
+                    <p class="mountain-text">${mountainsArray[index].desc}</p>
+                    <button type="button" id="${mountainsArray[index].name}" onclick="newFucntion('${parameter}')">More info</button>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    showMountainsDiv.innerHTML = cards;
+}
+
+//Create mountain dropdown options function
+function initMountainDropdown(){
+    const searchByMountainDropdown = document.getElementById("searchByMountainDropdown");
+
+    for(let index = 0; index < mountainsArray.length; index++){
+        const mountainOptions = new Option(mountainsArray[index].name, mountainsArray[index].name);
+        searchByMountainDropdown.appendChild(mountainOptions);
+    }
+}
+
+//Display mountain information function
+function displayModalFunction(){
+
+}
+
+
+
+function MountainInfo(){
+    let modalInfo ="";
+    for(let index = 0; index < mountainsArray.length; index++){
+    modalInfo += `
+        <div class="modal fade" id="${mountainsArray[index].elevation}" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header d-flex flex-column justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="images/${mountainsArray[index].img}" class="w-auto">
+                            </div>
+                            <h3 class="modal-title" id="modal-title">${mountainsArray[index].name}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>${mountainsArray[index].desc}</strong></p>
+                        <br>
+                        <p><strong>Elevation: </strong>${mountainsArray[index].elevation}<br>
+                        <strong>Latitude: </strong>${mountainsArray[index].coords.lat}<br>
+                        <strong>Longitude: </strong>${mountainsArray[index].coords.lng}</p>
+                        POTENTIAL SUNRISE/SUNSET
+                    </div>
+                        <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    document.getElementById("myModal").innerHTML = modalInfo;
+};
+
+
+
+
+
+'use strict'
+
+window.onload = init;
+
+
+
+//Navbar on scroll transition
+const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
+    if(window.scrollY >= 56) {
+        navbar.classList.remove('navbar-scrolled');
+    }
+    else if(window.scrollY < 56){
+        navbar.classList.add('navbar-scrolled');
+    }
+
+})
+
+
+
+//Call create dropdown options and initialize search button
+function init(){
+    //*Call function to display all moutain cards
+    displayMountainCards();
+
+    //*Call function to create dropdown options for mountains
+    initMountainDropdown();
+
+    //*Add event listioner to 
+    // const mountainDropdown = document.getElementById("searchByMountainDropdown");
+    // mountainDropdown.addEventListener('change', MountainInfo);
+}
+
+function newFucntion(parameter){
+    let myModal = document.getElementById("myModal");
+    let box = document.createElement("div");
+    box.id = whiteBox;
+    box.innerHTML = "Anything";
+
+    myModal.appendChild();
+
+
+
+}
+
+//Create mountain cards
+function displayMountainCards(){
+    //*Locate display div
+    const showMountainsDiv = document.getElementById("displayMountainCards");
+    
+    let cards = ""
+    for(let index = 0; index < mountainsArray.length; index++){
+        let parameter = mountainsArray[index].name;
+        cards += `
+        <div class="card my-3" id="${mountainsArray[index].name}" >
+        <img src="images/${mountainsArray[index].img}" >
+            <div class="card-info card-body">
+                <h4>${mountainsArray[index].name}</h4>
+                <div>
+                    <p class="mountain-text">${mountainsArray[index].desc}</p>
+                    <button type="button" id="${mountainsArray[index].name}" onclick="newFucntion('${parameter}')">More info</button>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    showMountainsDiv.innerHTML = cards;
+}
+
+//Create mountain dropdown options function
+function initMountainDropdown(){
+    const searchByMountainDropdown = document.getElementById("searchByMountainDropdown");
+
+    for(let index = 0; index < mountainsArray.length; index++){
+        const mountainOptions = new Option(mountainsArray[index].name, mountainsArray[index].name);
+        searchByMountainDropdown.appendChild(mountainOptions);
+    }
+}
+
+//Display mountain information function
+function displayModalFunction(){
+
+}
+
+
+
+function MountainInfo(){
+    let modalInfo ="";
+    for(let index = 0; index < mountainsArray.length; index++){
+    modalInfo += `
+        <div class="modal fade" id="${mountainsArray[index].elevation}" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header d-flex flex-column justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="images/${mountainsArray[index].img}" class="w-auto">
+                            </div>
+                            <h3 class="modal-title" id="modal-title">${mountainsArray[index].name}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>${mountainsArray[index].desc}</strong></p>
+                        <br>
+                        <p><strong>Elevation: </strong>${mountainsArray[index].elevation}<br>
+                        <strong>Latitude: </strong>${mountainsArray[index].coords.lat}<br>
+                        <strong>Longitude: </strong>${mountainsArray[index].coords.lng}</p>
+                        POTENTIAL SUNRISE/SUNSET
+                    </div>
+                        <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    document.getElementById("myModal").innerHTML = modalInfo;
+};
+
+
+
+
+
+
+
+
+'use strict'
+
+window.onload = init;
+
+
+
+//Navbar on scroll transition
+const navbar = document.querySelector(".navbar");
+window.addEventListener("scroll", () => {
+    if(window.scrollY >= 56) {
+        navbar.classList.remove('navbar-scrolled');
+    }
+    else if(window.scrollY < 56){
+        navbar.classList.add('navbar-scrolled');
+    }
+
+})
+
+
+
+//Call create dropdown options and initialize search button
+function init(){
+    //*Call function to display all moutain cards
+    displayMountainCards();
+
+    //*Call function to create dropdown options for mountains
+    initMountainDropdown();
+
+    //*Add event listioner to 
+    // const mountainDropdown = document.getElementById("searchByMountainDropdown");
+    // mountainDropdown.addEventListener('change', MountainInfo);
+}
+
+function newFucntion(parameter){
+    let myModal = document.getElementById("myModal");
+    let box = document.createElement("div");
+    box.innerText = parameter;
+    box.style.backgroundColor = "white";
+    box.style.zIndex = "100";
+
+    myModal.appendChild(box);
+
+
+
+}
+
+//Create mountain cards
+function displayMountainCards(){
+    //*Locate display div
+    const showMountainsDiv = document.getElementById("displayMountainCards");
+    
+    let cards = ""
+    for(let index = 0; index < mountainsArray.length; index++){
+        let parameter = mountainsArray[index].name;
+        cards += `
+        <div class="card my-3" id="${mountainsArray[index].name}" >
+        <img src="images/${mountainsArray[index].img}" >
+            <div class="card-info card-body">
+                <h4>${mountainsArray[index].name}</h4>
+                <div>
+                    <p class="mountain-text">${mountainsArray[index].desc}</p>
+                    <button type="button" id="${mountainsArray[index].name}" onclick="newFucntion('${parameter}')">More info</button>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    showMountainsDiv.innerHTML = cards;
+}
+
+//Create mountain dropdown options function
+function initMountainDropdown(){
+    const searchByMountainDropdown = document.getElementById("searchByMountainDropdown");
+
+    for(let index = 0; index < mountainsArray.length; index++){
+        const mountainOptions = new Option(mountainsArray[index].name, mountainsArray[index].name);
+        searchByMountainDropdown.appendChild(mountainOptions);
+    }
+}
+
+//Display mountain information function
+function displayModalFunction(){
+
+}
+
+
+
+function MountainInfo(){
+    let modalInfo ="";
+    for(let index = 0; index < mountainsArray.length; index++){
+    modalInfo += `
+        <div class="modal fade" id="${mountainsArray[index].elevation}" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header d-flex flex-column justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <img src="images/${mountainsArray[index].img}" class="w-auto">
+                            </div>
+                            <h3 class="modal-title" id="modal-title">${mountainsArray[index].name}</h3>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>${mountainsArray[index].desc}</strong></p>
+                        <br>
+                        <p><strong>Elevation: </strong>${mountainsArray[index].elevation}<br>
+                        <strong>Latitude: </strong>${mountainsArray[index].coords.lat}<br>
+                        <strong>Longitude: </strong>${mountainsArray[index].coords.lng}</p>
+                        POTENTIAL SUNRISE/SUNSET
+                    </div>
+                        <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+    document.getElementById("myModal").innerHTML = modalInfo;
+};
+

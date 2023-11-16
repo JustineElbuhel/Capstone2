@@ -9,6 +9,7 @@
     <!-- Link CSS -->
     <link rel="stylesheet" href="css/mountains_styles.css">
 </head>
+
 <body>
     <header>
         <!-- Navbar -->
@@ -33,54 +34,55 @@
                         </ul>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2" href="#!"><i class="fas fa-bell pe-2"></i>About Us</a>
-                </li>
-                <li class="nav-item ms-3">
-                    <button type="button" class="btn btn-outline-success"><a href="donate.html">DONATE</a></button>
+                    <a class="nav-link mx-2" href="index.html#about"><i class="fas fa-bell pe-2"></i>About Us</a>
                 </li>
                 </ul>
             </div>
         </nav>
     </header>
+
+    <!-- Main content -->
     <main>
-        <!-- Main content -->
-        <div>
-            <!-- <div class="m-4 d-flex justify-content-center">
-                <h1>Mountains</h1>
-            </div> -->
-            <div class="container ms-5 position-fixed">
-                <div class="card h-auto" style="width: 18rem;">
-                    <div class="card-body">
-                        <h3>Search by mountain:</h3>
-                        <select id="searchByMountainDropdown" class="form-select form-select mb-3">
-                            <option>Select mountain</option>
-                        </select>
-                        <div class="d-flex justify-content-end">
-                            <button type="button" id="searchByMountainBtn" data-bs-toggle="modal" data-bs-target="#reg-modal">Search</button>
+        <div class="d-flex flex-column flex-md-row">
+            <!-- Sidebar - Fixed Position -->
+            <div id="fixedDiv" class="col-12 col-md-3 col-lg-3">
+                <!-- Sidebar content -->
+                <div class="container">
+                    <div class="d-flex justify-content-center">
+                        <div class="card w-75 h-auto mt-5 my-auto">
+                            <div class="d-flex justify-content-center flex-column flex-wrap p-4">
+
+                                <!-- Mountain search dropdown -->
+                                <div class="mb-4">
+                                    <h3><strong>Search by mountain:</strong></h3>
+                                </div>
+                                    <select id="searchByMountainDropdown" class="form-select form-select mb-3">
+                                    <option>Select mountain</option>
+                                </select>
+                                <div class="d-flex justify-content-end">
+
+                                    <!-- Toggle modal -->
+                                    <button type="button" id="searchByMountainBtn" data-bs-toggle="modal" data-bs-target="#reg-modal">Search</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>        
+                </div>
             </div>
-            
-            <!-- Modal popup on user selection -->
-            <div id="myModal"></div>
 
-            <!-- Display all mountains -->
-            <div class=" col-9 offset-3 flex-row align-content-end ">
+            <!-- Modal -->
+            <div id="myModal">
+                <!-- Modal is inserted here on user selection -->
+            </div>
+
+            <!-- Main Content Area -->
+            <div id="displayDiv" class="col-12 col-md-9 ml-md-auto offset-3">
                 <div id="displayMountainCards" class="d-flex justify-content-evenly flex-row flex-wrap">
                     <!-- ! Mountain information displays here -->
                 </div>
-        </div>
-        </div>
-    </main>
-    <!-- Footer -->
-    <footer class="p-3 mt-5" >
-        <div class="container">
-            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>© 2023 Company, Inc. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+    </main>
     <!-- Bootstrap v5.3.2 Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- JavaScript -->

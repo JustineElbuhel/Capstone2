@@ -1,4 +1,9 @@
+/** Font */
 @import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Rowdies&display=swap');
+*{
+    font-family: "Crimson Text";
+}
 
 body {
     background-color: #7e8b81;
@@ -36,18 +41,23 @@ h1 {
 }
 
 .hero-button {
-    background-color: rgba(194, 201, 190, 0.76);
-    color: white;
+    background-color: rgba(194, 201, 190, .66);
+    color: rgb(255, 255, 255);
     font-size: 3vh;
+    font-weight: 24%;
     border-radius: 12px;
     border: solid rbga(0,0,0,0.9) 3px;
     box-shadow: 0px 5px 10px 0px rgba(210, 190, 190, 0.75);
 }
 
-a {
-    text-decoration: none;
-    color: white
+#aboutImg{
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+    outline: rgba(255,178,53, 0.6) solid 3px;
 }
+
+/** About content */
+
 
 footer {
     bottom: 0;
