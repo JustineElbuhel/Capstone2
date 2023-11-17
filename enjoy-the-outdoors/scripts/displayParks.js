@@ -295,6 +295,6 @@ function displayParks(event){
 
     //*No parks found display 
     else {
-        alert("No parks found, please try a new search")
+        alert("Unable to location parks, please try a new search")
     }    
 }

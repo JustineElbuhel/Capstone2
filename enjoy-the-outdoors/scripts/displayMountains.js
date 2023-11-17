@@ -104,7 +104,7 @@ function MountainInfoFromDropdown(){
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-end me-5">
-                        <button class="w-25" type="button" data-dismiss="modal">Close</button>
+                        <button type="button" class="w-25" onclick="refresh()">Close</button>  
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@ function MountainInfoFromCards(event){
                         </div>
                     </div>
                     <div class="modal-footer d-flex justify-content-end me-5">
-                        <button type="button" onclick="refresh()">Close</button>  
+                        <button type="button" class="w-25" onclick="refresh()">Close</button>  
                     </div>
                 </div>
             </div>
