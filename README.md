@@ -1,6 +1,6 @@
 # Your Path Website
 
-This website will allow users to search for parks and mountains around the USA. It has a simple userface that lets the user select a park type or state to display coresponding parks. Both the park and mountain pages display all information cards by default beofre the user can select their preferences and have the correct mountain or parks to display. 
+This website will allow users to search for parks and mountains around the USA. It has a simple userface that lets the user select a park type or state to display coresponding parks. Both the park and mountain pages display all information cards by default before the user can select their preferences and have the correct mountain or parks to display. 
 
 ### Prerequisites
 
